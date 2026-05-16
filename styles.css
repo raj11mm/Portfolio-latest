@@ -492,14 +492,53 @@ a {
 }
 
 .section-heading h2 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
   font-size: 1.9rem;
   font-weight: 800;
+  font-family: "Fira Code", monospace;
+  letter-spacing: -0.06em;
+  text-shadow: 0 0 24px hsl(var(--primary) / 0.2);
+}
+
+.section-heading h2::before {
+  content: "<";
+  color: hsl(var(--primary));
+  font-weight: 700;
+}
+
+.section-heading h2::after {
+  content: " />";
+  color: hsl(var(--primary));
+  font-weight: 700;
+}
+
+.section-heading h2:hover {
+  color: hsl(var(--primary));
+}
+
+.section-heading h2:hover::before,
+.section-heading h2:hover::after {
+  animation: bracket-pop 650ms ease;
 }
 
 .section-heading span {
   width: min(20rem, 35vw);
   height: 1px;
-  background: hsl(var(--border));
+  background: linear-gradient(90deg, hsl(var(--primary) / 0.8), hsl(var(--border)), transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-heading span::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 38%;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+  animation: heading-scan 2.8s ease-in-out infinite;
 }
 
 .about-grid {
@@ -1362,6 +1401,31 @@ footer p {
   }
   50% {
     transform: scaleY(1);
+  }
+}
+
+@keyframes heading-scan {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  35%,
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(280%);
+    opacity: 0;
+  }
+}
+
+@keyframes bracket-pop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-4px);
   }
 }
 
