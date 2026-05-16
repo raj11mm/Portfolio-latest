@@ -129,7 +129,7 @@ a {
 }
 
 .hero-copy {
-  max-width: min(780px, 68vw);
+  max-width: min(760px, calc(100% - 500px));
   z-index: 2;
 }
 
@@ -301,13 +301,21 @@ a {
   animation: bounce 1.4s infinite;
 }
 
-.stack-lab {
+.hero-visual {
   position: absolute;
   right: 0;
-  top: 16%;
+  top: 52%;
   z-index: 3;
   display: grid;
-  width: min(390px, 34vw);
+  width: min(430px, 34vw);
+  gap: 1rem;
+  transform: translateY(-50%);
+}
+
+.stack-lab {
+  position: relative;
+  display: grid;
+  width: 100%;
   gap: 0.7rem;
   border: 1px solid hsl(var(--border));
   border-radius: 1rem;
@@ -427,11 +435,8 @@ a {
 }
 
 .live-console {
-  position: absolute;
-  right: 0;
-  bottom: 4.5rem;
-  z-index: 3;
-  width: min(410px, 40vw);
+  position: relative;
+  width: 100%;
   overflow: hidden;
   border: 1px solid hsl(var(--border));
   border-radius: 0.75rem;
@@ -1386,22 +1391,22 @@ footer p {
     max-width: 100%;
   }
 
-  .stack-lab {
+  .hero-visual {
     position: relative;
     right: auto;
     top: auto;
     width: 100%;
     margin: 2.5rem auto 0;
+    transform: none;
     order: 2;
   }
 
-  .live-console {
-    position: relative;
-    right: auto;
-    bottom: auto;
+  .stack-lab {
     width: 100%;
-    margin-top: 1.5rem;
-    order: 3;
+  }
+
+  .live-console {
+    width: 100%;
   }
 
   .skill-grid {
