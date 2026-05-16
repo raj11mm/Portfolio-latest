@@ -520,6 +520,141 @@ a {
   margin: 0;
 }
 
+.about-visual {
+  position: relative;
+  min-height: 430px;
+}
+
+.dev-console {
+  position: relative;
+  z-index: 2;
+}
+
+.about-orb-card {
+  position: absolute;
+  z-index: 3;
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.9rem;
+  background: hsl(var(--card) / 0.88);
+  box-shadow: 0 24px 70px rgb(0 0 0 / 0.28);
+  backdrop-filter: blur(14px);
+}
+
+.status-card {
+  right: -1rem;
+  top: 4.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  animation: float-widget 4s ease-in-out infinite;
+}
+
+.bug-card {
+  left: -1rem;
+  bottom: 4rem;
+  max-width: 210px;
+  padding: 0.95rem 1rem;
+  animation: float-widget 4.5s ease-in-out infinite reverse;
+}
+
+.about-orb-card small {
+  display: block;
+  color: hsl(var(--muted));
+  font-family: "Fira Code", monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.about-orb-card strong {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.pulse-dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: hsl(var(--primary));
+  box-shadow: 0 0 0 0 hsl(var(--primary) / 0.5);
+  animation: pulse-ring 1.6s ease-out infinite;
+}
+
+.code-stream {
+  position: absolute;
+  inset: auto 0 0 auto;
+  z-index: 1;
+  display: grid;
+  gap: 0.55rem;
+  width: min(310px, 85%);
+  color: hsl(var(--primary) / 0.42);
+  font-family: "Fira Code", monospace;
+  font-size: 0.72rem;
+  overflow: hidden;
+}
+
+.code-stream span {
+  display: block;
+  width: max-content;
+  transform: translateX(120%);
+  animation: code-drift 7s linear infinite;
+}
+
+.code-stream span:nth-child(2) {
+  animation-delay: 1.2s;
+}
+
+.code-stream span:nth-child(3) {
+  animation-delay: 2.4s;
+}
+
+.code-stream span:nth-child(4) {
+  animation-delay: 3.6s;
+}
+
+.stack-bars {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 7.5rem;
+  z-index: 3;
+  display: flex;
+  align-items: end;
+  gap: 0.35rem;
+  height: 3.3rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.75rem;
+  background: hsl(var(--card) / 0.78);
+  padding: 0.65rem;
+}
+
+.stack-bars i {
+  display: block;
+  width: 0.45rem;
+  border-radius: 999px;
+  background: hsl(var(--primary) / 0.8);
+  animation: bar-eq 1.2s ease-in-out infinite;
+}
+
+.stack-bars i:nth-child(1) {
+  height: 35%;
+}
+
+.stack-bars i:nth-child(2) {
+  height: 70%;
+  animation-delay: 140ms;
+}
+
+.stack-bars i:nth-child(3) {
+  height: 45%;
+  animation-delay: 280ms;
+}
+
+.stack-bars i:nth-child(4) {
+  height: 85%;
+  animation-delay: 420ms;
+}
+
 .terminal-card,
 .card,
 .project-desc,
@@ -1180,6 +1315,51 @@ footer p {
   }
 }
 
+@keyframes float-widget {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.5);
+  }
+  80%,
+  100% {
+    box-shadow: 0 0 0 12px hsl(var(--primary) / 0);
+  }
+}
+
+@keyframes code-drift {
+  0% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  12%,
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-130%);
+    opacity: 0;
+  }
+}
+
+@keyframes bar-eq {
+  0%,
+  100% {
+    transform: scaleY(0.45);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
 @media (max-width: 900px) {
   .nav nav {
     display: none;
@@ -1188,6 +1368,18 @@ footer p {
   .about-grid,
   .project {
     grid-template-columns: 1fr;
+  }
+
+  .about-visual {
+    min-height: 390px;
+  }
+
+  .status-card {
+    right: 0;
+  }
+
+  .bug-card {
+    left: 0;
   }
 
   .hero-copy {
@@ -1268,6 +1460,16 @@ footer p {
   .skill-grid,
   .store-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-visual {
+    min-height: auto;
+  }
+
+  .about-orb-card,
+  .stack-bars,
+  .code-stream {
+    display: none;
   }
 
   .code-decor,
