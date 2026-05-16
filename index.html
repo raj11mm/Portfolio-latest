@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raj Shekhar Portfolio</title>
+    <meta
+      name="description"
+      content="Raj Shekhar is a full stack developer specializing in Java, Spring Boot, React.js, Node.js, and real-world web applications."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Raj Shekhar Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore Raj Shekhar's skills, projects, experience, and contact details."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#020817" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="logo" href="#hero">&lt;RS /&gt;</a>
+        <nav aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <svg class="icon-sprite" aria-hidden="true">
+        <symbol id="icon-github" viewBox="0 0 24 24">
+          <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.2-3.37-1.2-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.33 1.08 2.9.83.09-.64.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.55 9.55 0 0 1 12 5.98c.85 0 1.71.11 2.51.34 1.9-1.3 2.74-1.03 2.74-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
+        </symbol>
+        <symbol id="icon-external" viewBox="0 0 24 24">
+          <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3Z" />
+          <path d="M5 5h6v2H7v10h10v-4h2v6H5V5Z" />
+        </symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 24 24">
+          <path d="M6.94 8.98H3.97V20h2.97V8.98ZM7.2 5.56A1.72 1.72 0 1 0 3.76 5.56a1.72 1.72 0 0 0 3.44 0ZM20.25 13.68c0-2.96-1.58-4.33-3.69-4.33a3.18 3.18 0 0 0-2.86 1.57h-.04V8.98h-2.85V20h2.97v-5.45c0-1.44.27-2.83 2.05-2.83 1.76 0 1.78 1.65 1.78 2.92V20h2.97l-.33-6.32Z" />
+        </symbol>
+      </svg>
+
+      <section class="hero section" id="hero">
+        <div class="hero-glow one"></div>
+        <div class="hero-glow two"></div>
+        <div class="stack-lab reveal" aria-label="Animated full stack workflow">
+          <div class="lab-stage active" data-stage="ui">
+            <span>01</span>
+            <strong>React UI</strong>
+            <small>components render</small>
+          </div>
+          <div class="lab-connector"></div>
+          <div class="lab-stage" data-stage="api">
+            <span>02</span>
+            <strong>Spring API</strong>
+            <small>routes respond</small>
+          </div>
+          <div class="lab-connector"></div>
+          <div class="lab-stage" data-stage="db">
+            <span>03</span>
+            <strong>MongoDB</strong>
+            <small>data persists</small>
+          </div>
+          <div class="signal-lines" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </div>
+        </div>
+        <div class="reveal hero-copy">
+          <p class="mono accent">Hi, my name is</p>
+          <div class="name-row">
+            <h1>Raj Shekhar.</h1>
+            <span class="name-badge">Raj / राज</span>
+          </div>
+          <h2><span id="typed-text">I build things for the web.</span><span class="cursor">|</span></h2>
+          <p class="hero-text">
+            Full-stack by choice, backend by obsession. I build real-world web apps
+            with Java, React, Express, MySQL, and enough debugging patience to survive
+            bugs that only appear after deployment.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="#contact">Get In Touch</a>
+            <a class="btn outline" href="https://github.com/raj11mm" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="live-console reveal" aria-hidden="true">
+          <div class="terminal-top">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="console-lines">
+            <p><b>raj@portfolio</b>:~$ npm run build</p>
+            <p class="console-success">✓ React interface compiled</p>
+            <p class="console-success">✓ Spring Boot API mapped</p>
+            <p class="console-success">✓ MongoDB connection ready</p>
+            <p><b>status</b>: shipping clean products...</p>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#about" aria-label="Scroll to about">↓</a>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="decor brace left" aria-hidden="true">{</div>
+        <div class="decor brace right" aria-hidden="true">}</div>
+        <pre class="code-decor" aria-hidden="true">const dev = {
+  name: "Raj",
+  focus: 100,
+  coffee: Infinity,
+  bugs: "fixed"
+};</pre>
+        <div class="section-heading reveal">
+          <h2>About Me</h2>
+          <span></span>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              I'm Raj — a B.Tech CSE graduate and full-stack developer by choice,
+              backend enthusiast by obsession. I like building projects that actually
+              do something, not just sit there looking pretty in a README.
+            </p>
+            <p>
+              My stack lives around Java, React, JavaScript, Express, MySQL, and the
+              occasional late-night debugging session where one missing bracket tries
+              to humble the entire engineering profession.
+            </p>
+            <p>
+              Right now, I'm leveling up in Node.js and scalable backend architecture
+              because "it works on my machine" is not a deployment strategy. Always
+              learning, always shipping, occasionally sleeping.
+            </p>
+          </div>
+          <div class="terminal-card reveal">
+            <div class="terminal-top">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="terminal-body">
+              <p><span>$</span> whoami</p>
+              <strong>Raj Shekhar</strong>
+              <p><span>$</span> current_stack</p>
+              <strong>Java · Spring Boot · React.js · Node.js</strong>
+              <p><span>$</span> mission</p>
+              <strong>Build clean, secure, real-world web apps.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section skills" id="skills">
+        <div class="pattern" aria-hidden="true"></div>
+        <span class="watermark" aria-hidden="true">#</span>
+        <div class="section-heading reveal">
+          <h2>Technical Arsenal</h2>
+          <span></span>
+        </div>
+        <div class="skill-grid">
+          <article class="card reveal">
+            <h3>Languages & Fundamentals</h3>
+            <div class="skill-meter"><i style="width: 88%"></i></div>
+            <div class="pills">
+              <span>Java</span><span>JavaScript</span><span>SQL</span><span>OOPs</span><span>DSA</span>
+            </div>
+          </article>
+          <article class="card reveal">
+            <h3>Frontend</h3>
+            <div class="skill-meter"><i style="width: 92%"></i></div>
+            <div class="pills">
+              <span>React.js</span><span>Redux</span><span>Tailwind CSS</span><span>HTML5</span><span>CSS3</span>
+            </div>
+          </article>
+          <article class="card reveal">
+            <h3>Backend & Database</h3>
+            <div class="skill-meter"><i style="width: 86%"></i></div>
+            <div class="pills">
+              <span>Spring Boot</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>MySQL</span>
+            </div>
+          </article>
+          <article class="card reveal">
+            <h3>Tools & DevOps</h3>
+            <div class="skill-meter"><i style="width: 82%"></i></div>
+            <div class="pills">
+              <span>Git</span><span>GitHub</span><span>VS Code</span><span>IntelliJ IDEA</span><span>Vercel</span><span>Render</span>
+            </div>
+          </article>
+          <article class="card reveal">
+            <h3>AI Tools</h3>
+            <div class="pills">
+              <span>Cursor IDE</span><span>Claude AI</span>
+            </div>
+          </article>
+          <article class="card reveal">
+            <h3>Soft Skills</h3>
+            <div class="pills">
+              <span>Problem-Solving</span><span>Quick Learning</span><span>Teamwork</span><span>Adaptability</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section projects" id="projects">
+        <div class="side-dots" aria-hidden="true">
+          <span></span><i></i><span></span><i></i><span></span><i></i><span></span>
+        </div>
+        <p class="project-command" aria-hidden="true">$ npm run build</p>
+        <div class="section-heading reveal">
+          <h2>Featured Projects</h2>
+          <span></span>
+        </div>
+        <div class="project-list">
+          <article class="project reveal">
+            <div class="project-content">
+              <p class="mono accent">Apr 2026 - Present</p>
+              <h3>WhisperBox</h3>
+              <div class="project-desc">
+                <p>
+                  Anonymous Messaging Web App. A full-stack platform for receiving
+                  anonymous messages via shareable links. Features include an inbox
+                  dashboard, read/unread status, and secure message deletion.
+                </p>
+                <p>
+                  Implemented robust security measures including bcrypt hashing, rate
+                  limiting, and input sanitization to protect user data.
+                </p>
+              </div>
+              <ul>
+                <li>React</li><li>Vite</li><li>Node.js</li><li>Express</li><li>MongoDB</li><li>JWT</li><li>Tailwind CSS</li>
+              </ul>
+              <div class="links">
+                <a class="icon-link" href="https://github.com/raj11mm" target="_blank" rel="noopener noreferrer" aria-label="WhisperBox GitHub repository">
+                  <svg><use href="#icon-github"></use></svg>
+                </a>
+                <a class="icon-link" href="https://anonymous-messaging-application.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="WhisperBox live site">
+                  <svg><use href="#icon-external"></use></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-preview">
+              <div class="browser-bar"><span></span><span></span><span></span><em>anonymous-messaging-application.vercel.app</em></div>
+              <div class="mock-inbox">
+                <b>WhisperBox Inbox</b><small>3 new</small>
+                <p class="unread">You're doing amazing! Keep it up</p>
+                <p class="unread">Your project is really impressive!</p>
+                <p>Anonymous message here...</p>
+                <p>Who built this? Incredible work!</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-content">
+              <p class="mono accent">Apr 2026</p>
+              <h3>RAJify</h3>
+              <div class="project-desc">
+                <p>
+                  Full-Stack E-commerce Web Application. Built a responsive frontend
+                  and developed scalable REST APIs to handle product catalog and user
+                  transactions.
+                </p>
+                <p>
+                  Leveraged Cursor AI to accelerate development speed while maintaining
+                  code quality and robust architecture.
+                </p>
+              </div>
+              <ul>
+                <li>Java</li><li>Spring Boot</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <div class="links">
+                <a class="icon-link" href="https://github.com/raj11mm/RAJify" target="_blank" rel="noopener noreferrer" aria-label="RAJify GitHub repository">
+                  <svg><use href="#icon-github"></use></svg>
+                </a>
+                <a class="icon-link" href="https://github.com/raj11mm/RAJify" target="_blank" rel="noopener noreferrer" aria-label="RAJify project details">
+                  <svg><use href="#icon-external"></use></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-preview">
+              <div class="browser-bar"><span></span><span></span><span></span><em>github.com/raj11mm/RAJify</em></div>
+              <div class="store-grid">
+                <b>RAJify Store</b><small>Cart (2)</small>
+                <div>Wireless Earbuds <strong>₹1,299</strong></div>
+                <div>Smart Watch <strong>₹4,999</strong></div>
+                <div>USB-C Hub <strong>₹899</strong></div>
+                <div>Laptop Stand <strong>₹2,199</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-content">
+              <p class="mono accent">Mar 2024 - Apr 2024</p>
+              <h3>PGLife11</h3>
+              <div class="project-desc">
+                <p>
+                  PG & Hostel Finder Web Application. A responsive platform for browsing
+                  accommodation listings with a clean, intuitive user interface.
+                </p>
+                <p>
+                  Focused on mobile-first responsive design and creating a seamless user
+                  experience for discovering local living spaces.
+                </p>
+              </div>
+              <ul>
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <div class="links">
+                <a class="icon-link" href="https://github.com/raj11mm" target="_blank" rel="noopener noreferrer" aria-label="PGLife11 GitHub repository">
+                  <svg><use href="#icon-github"></use></svg>
+                </a>
+                <a class="icon-link" href="https://pg-life11.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="PGLife11 live site">
+                  <svg><use href="#icon-external"></use></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-preview">
+              <div class="browser-bar"><span></span><span></span><span></span><em>pg-life11.vercel.app</em></div>
+              <div class="listing-list">
+                <b>PGLife11 - Listings</b><small>24 found</small>
+                <p><strong>Sunshine PG</strong><span>₹8,500/mo</span></p>
+                <p><strong>Royal Residency</strong><span>₹12,000/mo</span></p>
+                <p><strong>Green Nest Hostel</strong><span>₹6,000/mo</span></p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section experience" id="experience">
+        <div class="section-heading reveal">
+          <h2>Experience</h2>
+          <span></span>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="dot"></div>
+            <div>
+              <h3>Software Development Intern</h3>
+              <h4>Kodnest Technologies</h4>
+              <p class="mono">Aug 2025 - Present · Bengaluru, Karnataka, India</p>
+              <p>
+                Gained hands-on experience in Java, MySQL, Frontend Technologies, and
+                Manual Testing. Contributing to real-world projects and adhering to
+                industry best practices.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="dot"></div>
+            <div>
+              <h3>Cloud Computing Intern</h3>
+              <h4>Ardent Computech Pvt Ltd</h4>
+              <p class="mono">Sep 2024 - Oct 2024 · Remote</p>
+              <p>
+                Completed an industrial internship focused on Cloud Computing with AWS,
+                learning core infrastructure and deployment strategies.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="contact-bg" aria-hidden="true">@</div>
+        <div class="reveal">
+          <p class="mono accent">What's Next?</p>
+          <h2>Get In Touch</h2>
+          <p>
+            I'm currently looking for new opportunities. Whether you have a question,
+            a project idea, or just want to say hi, I'll try my best to get back to you!
+          </p>
+          <div class="actions center">
+            <a class="btn primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=rajthisside1609@gmail.com" target="_blank" rel="noopener noreferrer">Say Hello</a>
+            <a class="btn outline" href="tel:+919771147596">+91 9771147596</a>
+          </div>
+          <a class="email" href="mailto:rajthisside1609@gmail.com">rajthisside1609@gmail.com</a>
+          <div class="socials">
+            <a class="icon-link" href="https://github.com/raj11mm" target="_blank" rel="noopener noreferrer" aria-label="Raj Shekhar GitHub">
+              <svg><use href="#icon-github"></use></svg>
+            </a>
+            <a class="icon-link" href="https://www.linkedin.com/in/raj-shekhar-967149332" target="_blank" rel="noopener noreferrer" aria-label="Raj Shekhar LinkedIn">
+              <svg><use href="#icon-linkedin"></use></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built by Raj Shekhar</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
