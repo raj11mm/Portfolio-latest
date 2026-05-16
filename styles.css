@@ -1450,7 +1450,25 @@ footer p {
   }
 
   .live-console {
-    display: none;
+    display: block;
+    margin-top: 1rem;
+    border-radius: 0.65rem;
+    box-shadow: 0 18px 50px rgb(0 0 0 / 0.22);
+  }
+
+  .live-console .terminal-top {
+    padding: 0.65rem 0.8rem;
+  }
+
+  .console-lines {
+    gap: 0.45rem;
+    padding: 0.8rem;
+    font-size: 0.68rem;
+  }
+
+  .console-lines p {
+    max-width: 100%;
+    white-space: normal;
   }
 
   .actions,
