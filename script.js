@@ -118,27 +118,3 @@ if (labStages.length) {
     });
   });
 }
-
-const techLogos = [...document.querySelectorAll(".tech-logo")];
-let activeTechLogo = 0;
-
-if (techLogos.length) {
-  setInterval(() => {
-    techLogos.forEach((logo, index) => {
-      logo.classList.toggle("active", index === activeTechLogo);
-    });
-    activeTechLogo = (activeTechLogo + 1) % techLogos.length;
-  }, 1200);
-
-  techLogos.forEach((logo, index) => {
-    logo.addEventListener("pointerenter", () => {
-      activeTechLogo = index;
-      techLogos.forEach((item) => item.classList.remove("active"));
-      logo.classList.add("active");
-    });
-
-    logo.addEventListener("pointerleave", () => {
-      logo.classList.remove("active");
-    });
-  });
-}

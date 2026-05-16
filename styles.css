@@ -226,124 +226,6 @@ a {
   color: hsl(var(--primary));
 }
 
-.tech-jumpers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.3rem;
-}
-
-.tech-logo {
-  position: relative;
-  display: grid;
-  width: 4.65rem;
-  height: 4.65rem;
-  place-items: center;
-  overflow: hidden;
-  border: 1px solid hsl(var(--border));
-  border-radius: 0.9rem;
-  background: hsl(var(--card));
-  color: hsl(var(--foreground));
-  cursor: pointer;
-  transform-style: preserve-3d;
-  animation: tech-hop 3.4s ease-in-out infinite;
-  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
-}
-
-.tech-logo::before {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  background: conic-gradient(from 180deg, transparent, hsl(var(--primary) / 0.28), transparent 40%);
-  opacity: 0;
-  animation: logo-sweep 3.4s linear infinite;
-}
-
-.tech-logo span,
-.tech-logo small {
-  position: relative;
-  z-index: 1;
-}
-
-.tech-logo span {
-  display: grid;
-  width: 2.05rem;
-  height: 2.05rem;
-  place-items: center;
-  border-radius: 0.65rem;
-  background: hsl(var(--border) / 0.55);
-  color: hsl(var(--primary));
-  font-family: "Fira Code", monospace;
-  font-size: 1rem;
-  font-weight: 900;
-  transition: transform 350ms ease;
-}
-
-.tech-logo small {
-  color: hsl(var(--muted));
-  font-family: "Fira Code", monospace;
-  font-size: 0.65rem;
-  font-weight: 800;
-}
-
-.tech-logo:hover,
-.tech-logo.active {
-  border-color: hsl(var(--primary) / 0.65);
-  box-shadow: 0 16px 42px hsl(var(--primary) / 0.12);
-  transform: translateY(-8px) rotateX(12deg) rotateY(-12deg);
-  animation-play-state: paused;
-}
-
-.tech-logo:hover::before,
-.tech-logo.active::before {
-  opacity: 1;
-}
-
-.tech-logo:hover span,
-.tech-logo.active span {
-  transform: rotateY(180deg) scale(1.08);
-}
-
-.tech-logo.react {
-  animation-delay: 0ms;
-}
-
-.tech-logo.java {
-  animation-delay: 180ms;
-}
-
-.tech-logo.spring {
-  animation-delay: 360ms;
-}
-
-.tech-logo.node {
-  animation-delay: 540ms;
-}
-
-.tech-logo.mysql {
-  animation-delay: 720ms;
-}
-
-.tech-logo.react span {
-  color: #61dafb;
-}
-
-.tech-logo.java span {
-  color: #f89820;
-}
-
-.tech-logo.spring span {
-  color: #6db33f;
-}
-
-.tech-logo.node span {
-  color: #83cd29;
-}
-
-.tech-logo.mysql span {
-  color: #00a8e8;
-}
-
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -1298,25 +1180,6 @@ footer p {
   }
 }
 
-@keyframes tech-hop {
-  0%,
-  100% {
-    transform: translateY(0) rotateX(0deg);
-  }
-  18% {
-    transform: translateY(-8px) rotateX(10deg);
-  }
-  34% {
-    transform: translateY(0) rotateX(0deg);
-  }
-}
-
-@keyframes logo-sweep {
-  to {
-    rotate: 360deg;
-  }
-}
-
 @media (max-width: 900px) {
   .nav nav {
     display: none;
@@ -1396,15 +1259,6 @@ footer p {
   .actions,
   .actions.center {
     flex-direction: column;
-  }
-
-  .tech-jumpers {
-    gap: 0.55rem;
-  }
-
-  .tech-logo {
-    width: 4rem;
-    height: 4rem;
   }
 
   .btn {
