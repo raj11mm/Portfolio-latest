@@ -176,22 +176,6 @@ a {
   color: hsl(var(--primary));
 }
 
-.name-badge {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.4rem;
-  border: 1px solid hsl(var(--primary) / 0.35);
-  border-radius: 999px;
-  background: hsl(var(--primary) / 0.07);
-  color: hsl(var(--primary));
-  padding: 0 0.9rem;
-  font-family: "Fira Code", monospace;
-  font-size: clamp(0.85rem, 1.4vw, 1rem);
-  font-weight: 800;
-  letter-spacing: 0;
-  box-shadow: 0 12px 34px hsl(var(--primary) / 0.08);
-}
-
 .hero h2 {
   min-height: 1.2em;
   margin-top: 0.65rem;
@@ -289,6 +273,39 @@ a {
   width: 300px;
   height: 300px;
   background: hsl(var(--violet) / 0.1);
+}
+
+.hero-name-graphic {
+  position: absolute;
+  inset: auto 0 1rem auto;
+  z-index: 0;
+  display: grid;
+  justify-items: end;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.18;
+  transform: rotate(-4deg);
+}
+
+.hero-name-graphic span,
+.hero-name-graphic strong {
+  font-family: "Fira Code", monospace;
+  font-weight: 900;
+  letter-spacing: -0.12em;
+  line-height: 0.78;
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.95), hsl(var(--violet) / 0.55));
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 60px hsl(var(--primary) / 0.18);
+}
+
+.hero-name-graphic span {
+  font-size: clamp(8rem, 20vw, 18rem);
+}
+
+.hero-name-graphic strong {
+  margin-top: -0.5rem;
+  font-size: clamp(6rem, 15vw, 14rem);
 }
 
 .scroll-cue {
@@ -1503,6 +1520,19 @@ footer p {
   .cursor-glow,
   .hero-glow {
     display: none;
+  }
+
+  .hero-name-graphic {
+    inset: auto 0 3rem auto;
+    opacity: 0.1;
+  }
+
+  .hero-name-graphic span {
+    font-size: clamp(5.5rem, 25vw, 9rem);
+  }
+
+  .hero-name-graphic strong {
+    font-size: clamp(4rem, 19vw, 7rem);
   }
 
   .stack-lab {
