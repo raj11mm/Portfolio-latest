@@ -74,6 +74,51 @@ window.addEventListener("pointermove", (event) => {
   cursorGlow.style.top = `${event.clientY}px`;
 });
 
+const clickTokens = ["{}", "</>", "api", "git", "SQL", "200", "JWT", "npm"];
+const clickCommands = ["run build", "ship()", "commit -m", "api:200", "debug++"];
+
+function createClickAnimation(event) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const x = `${event.clientX}px`;
+  const y = `${event.clientY}px`;
+  const burst = document.createElement("span");
+  burst.className = "click-burst";
+  burst.style.setProperty("--click-x", x);
+  burst.style.setProperty("--click-y", y);
+  document.body.appendChild(burst);
+
+  const command = document.createElement("span");
+  command.className = "click-command";
+  command.textContent = `$ ${clickCommands[Math.floor(Math.random() * clickCommands.length)]}`;
+  command.style.setProperty("--click-x", x);
+  command.style.setProperty("--click-y", y);
+  document.body.appendChild(command);
+
+  for (let index = 0; index < 7; index += 1) {
+    const particle = document.createElement("span");
+    const angle = (Math.PI * 2 * index) / 7;
+    const distance = 42 + Math.random() * 34;
+
+    particle.className = "click-particle";
+    particle.textContent = clickTokens[(index + Math.floor(Math.random() * clickTokens.length)) % clickTokens.length];
+    particle.style.setProperty("--click-x", x);
+    particle.style.setProperty("--click-y", y);
+    particle.style.setProperty("--tx", `${Math.cos(angle) * distance}px`);
+    particle.style.setProperty("--ty", `${Math.sin(angle) * distance}px`);
+    particle.style.setProperty("--rot", `${Math.round(-80 + Math.random() * 160)}deg`);
+    document.body.appendChild(particle);
+  }
+
+  setTimeout(() => {
+    burst.remove();
+    command.remove();
+    document.querySelectorAll(".click-particle").forEach((particle) => particle.remove());
+  }, 950);
+}
+
+window.addEventListener("click", createClickAnimation);
+
 document.querySelectorAll(".card, .project").forEach((element) => {
   element.addEventListener("pointermove", (event) => {
     const rect = element.getBoundingClientRect();
