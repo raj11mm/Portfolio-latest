@@ -59,59 +59,87 @@ body {
 .ambient-code-rain span {
   position: absolute;
   top: -3rem;
+  left: var(--rain-left);
   color: hsl(var(--primary) / 0.24);
   font-family: "Fira Code", monospace;
   font-size: clamp(0.82rem, 1.1vw, 1.05rem);
   font-weight: 800;
+  opacity: var(--rain-opacity, 1);
   text-shadow: 0 0 20px hsl(var(--primary) / 0.22);
-  animation: code-rain-fall linear infinite;
+  animation: code-rain-fall var(--rain-duration) linear infinite;
+  animation-delay: var(--rain-delay);
 }
 
 .ambient-code-rain span:nth-child(1) {
-  left: 8%;
-  animation-duration: 14s;
+  --rain-left: 8%;
+  --rain-drift: 16vw;
+  --rain-rotate: -18deg;
+  --rain-duration: 13s;
+  --rain-delay: -4s;
+  --rain-opacity: 0.78;
 }
 
 .ambient-code-rain span:nth-child(2) {
-  left: 22%;
-  animation-duration: 18s;
-  animation-delay: 2s;
+  --rain-left: 24%;
+  --rain-drift: -9vw;
+  --rain-rotate: 22deg;
+  --rain-duration: 19s;
+  --rain-delay: -11s;
+  --rain-opacity: 0.55;
 }
 
 .ambient-code-rain span:nth-child(3) {
-  left: 36%;
-  animation-duration: 16s;
-  animation-delay: 5s;
+  --rain-left: 41%;
+  --rain-drift: 12vw;
+  --rain-rotate: 12deg;
+  --rain-duration: 15s;
+  --rain-delay: -1s;
+  --rain-opacity: 0.9;
 }
 
 .ambient-code-rain span:nth-child(4) {
-  left: 51%;
-  animation-duration: 21s;
-  animation-delay: 1s;
+  --rain-left: 57%;
+  --rain-drift: -17vw;
+  --rain-rotate: -24deg;
+  --rain-duration: 23s;
+  --rain-delay: -15s;
+  --rain-opacity: 0.5;
 }
 
 .ambient-code-rain span:nth-child(5) {
-  left: 65%;
-  animation-duration: 15s;
-  animation-delay: 4s;
+  --rain-left: 68%;
+  --rain-drift: 7vw;
+  --rain-rotate: 30deg;
+  --rain-duration: 16s;
+  --rain-delay: -7s;
+  --rain-opacity: 0.72;
 }
 
 .ambient-code-rain span:nth-child(6) {
-  left: 78%;
-  animation-duration: 19s;
-  animation-delay: 6s;
+  --rain-left: 82%;
+  --rain-drift: -13vw;
+  --rain-rotate: -10deg;
+  --rain-duration: 20s;
+  --rain-delay: -2s;
+  --rain-opacity: 0.86;
 }
 
 .ambient-code-rain span:nth-child(7) {
-  left: 88%;
-  animation-duration: 17s;
-  animation-delay: 3s;
+  --rain-left: 92%;
+  --rain-drift: -24vw;
+  --rain-rotate: 18deg;
+  --rain-duration: 17s;
+  --rain-delay: -13s;
+  --rain-opacity: 0.58;
 }
 
 .ambient-code-rain span:nth-child(8) {
-  left: 94%;
-  animation-duration: 22s;
-  animation-delay: 8s;
+  --rain-left: 15%;
+  --rain-drift: 28vw;
+  --rain-rotate: -28deg;
+  --rain-duration: 24s;
+  --rain-delay: -18s;
+  --rain-opacity: 0.62;
 }
 
 .click-burst {
@@ -1713,15 +1741,18 @@ footer p {
 
 @keyframes code-rain-fall {
   0% {
-    transform: translateY(-4rem) rotate(-8deg);
+    transform: translate3d(0, -4rem, 0) rotate(0deg);
     opacity: 0;
   }
-  10%,
-  78% {
-    opacity: 1;
+  12% {
+    opacity: var(--rain-opacity, 1);
+  }
+  52% {
+    transform: translate3d(calc(var(--rain-drift) * 0.55), 52vh, 0) rotate(calc(var(--rain-rotate) * 0.6));
+    opacity: var(--rain-opacity, 1);
   }
   100% {
-    transform: translateY(calc(100vh + 4rem)) rotate(8deg);
+    transform: translate3d(var(--rain-drift), calc(100vh + 4rem), 0) rotate(var(--rain-rotate));
     opacity: 0;
   }
 }
@@ -1887,7 +1918,10 @@ footer p {
   }
 
   .ambient-code-rain span {
-    animation: code-rain-fall 28s linear infinite !important;
+    animation-name: code-rain-fall !important;
+    animation-duration: calc(var(--rain-duration) * 1.35) !important;
+    animation-timing-function: linear !important;
+    animation-iteration-count: infinite !important;
   }
 
   .click-burst {
