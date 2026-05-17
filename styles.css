@@ -51,7 +51,7 @@ body {
 .ambient-code-rain {
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
   overflow: hidden;
 }
@@ -59,10 +59,11 @@ body {
 .ambient-code-rain span {
   position: absolute;
   top: -3rem;
-  color: hsl(var(--primary) / 0.12);
+  color: hsl(var(--primary) / 0.24);
   font-family: "Fira Code", monospace;
-  font-size: 0.82rem;
+  font-size: clamp(0.82rem, 1.1vw, 1.05rem);
   font-weight: 800;
+  text-shadow: 0 0 20px hsl(var(--primary) / 0.22);
   animation: code-rain-fall linear infinite;
 }
 
@@ -197,6 +198,12 @@ body {
 body::selection {
   background: hsl(var(--primary) / 0.3);
   color: hsl(var(--foreground));
+}
+
+main,
+footer {
+  position: relative;
+  z-index: 2;
 }
 
 body.page-clicked::after {
@@ -1879,8 +1886,8 @@ footer p {
     transition-duration: 0.001ms !important;
   }
 
-  .ambient-code-rain {
-    display: none;
+  .ambient-code-rain span {
+    animation: code-rain-fall 28s linear infinite !important;
   }
 
   .click-burst {
