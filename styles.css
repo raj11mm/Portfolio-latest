@@ -153,14 +153,16 @@ a {
 }
 
 .name-row {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 0.85rem;
   margin-top: 0.75rem;
+  width: fit-content;
 }
 
 .hero h1 {
+  position: relative;
+  z-index: 2;
   font-size: clamp(2.7rem, 6.2vw, 5.2rem);
   font-weight: 800;
   line-height: 1;
@@ -276,14 +278,16 @@ a {
 }
 
 .name-side-graphic {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  z-index: 1;
   display: grid;
-  display: grid;
-  justify-items: start;
-  align-self: center;
+  justify-items: center;
   pointer-events: none;
   user-select: none;
-  opacity: 0.55;
-  transform: rotate(-3deg);
+  opacity: 0.16;
+  transform: translateY(-50%) rotate(-4deg);
 }
 
 .name-side-graphic span,
@@ -299,12 +303,12 @@ a {
 }
 
 .name-side-graphic span {
-  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-size: clamp(5rem, 13vw, 10rem);
 }
 
 .name-side-graphic strong {
-  margin-top: -0.1rem;
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-top: -0.45rem;
+  font-size: clamp(3.8rem, 10vw, 8rem);
 }
 
 .scroll-cue {
@@ -1522,15 +1526,16 @@ footer p {
   }
 
   .name-side-graphic {
-    opacity: 0.5;
+    left: 0.4rem;
+    opacity: 0.12;
   }
 
   .name-side-graphic span {
-    font-size: clamp(2rem, 10vw, 3rem);
+    font-size: clamp(4rem, 24vw, 7rem);
   }
 
   .name-side-graphic strong {
-    font-size: clamp(1.55rem, 8vw, 2.35rem);
+    font-size: clamp(3rem, 18vw, 5.4rem);
   }
 
   .stack-lab {
