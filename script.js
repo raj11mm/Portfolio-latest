@@ -78,7 +78,7 @@ const clickTokens = ["{}", "</>", "api", "git", "SQL", "200", "JWT", "npm"];
 const clickCommands = ["run build", "ship()", "commit -m", "api:200", "debug++"];
 
 function createClickAnimation(event) {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (event.button !== undefined && event.button !== 0) return;
 
   const x = `${event.clientX}px`;
   const y = `${event.clientY}px`;
@@ -124,7 +124,7 @@ function createClickAnimation(event) {
   }, 1100);
 }
 
-window.addEventListener("click", createClickAnimation);
+window.addEventListener("pointerdown", createClickAnimation, { capture: true });
 
 document.querySelectorAll(".card, .project").forEach((element) => {
   element.addEventListener("pointermove", (event) => {
