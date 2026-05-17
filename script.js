@@ -88,6 +88,12 @@ function createClickAnimation(event) {
   burst.style.setProperty("--click-y", y);
   document.body.appendChild(burst);
 
+  const flash = document.createElement("span");
+  flash.className = "screen-flash";
+  flash.style.setProperty("--click-x", x);
+  flash.style.setProperty("--click-y", y);
+  document.body.appendChild(flash);
+
   const command = document.createElement("span");
   command.className = "click-command";
   command.textContent = `$ ${clickCommands[Math.floor(Math.random() * clickCommands.length)]}`;
@@ -95,10 +101,10 @@ function createClickAnimation(event) {
   command.style.setProperty("--click-y", y);
   document.body.appendChild(command);
 
-  for (let index = 0; index < 7; index += 1) {
+  for (let index = 0; index < 12; index += 1) {
     const particle = document.createElement("span");
-    const angle = (Math.PI * 2 * index) / 7;
-    const distance = 42 + Math.random() * 34;
+    const angle = (Math.PI * 2 * index) / 12;
+    const distance = 58 + Math.random() * 56;
 
     particle.className = "click-particle";
     particle.textContent = clickTokens[(index + Math.floor(Math.random() * clickTokens.length)) % clickTokens.length];
@@ -112,9 +118,10 @@ function createClickAnimation(event) {
 
   setTimeout(() => {
     burst.remove();
+    flash.remove();
     command.remove();
     document.querySelectorAll(".click-particle").forEach((particle) => particle.remove());
-  }, 950);
+  }, 1100);
 }
 
 window.addEventListener("click", createClickAnimation);
