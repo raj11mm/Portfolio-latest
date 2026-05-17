@@ -82,6 +82,16 @@ function createClickAnimation(event) {
 
   const x = `${event.clientX}px`;
   const y = `${event.clientY}px`;
+  const xPercent = `${(event.clientX / window.innerWidth) * 100}%`;
+  const yPercent = `${(event.clientY / window.innerHeight) * 100}%`;
+
+  document.body.style.setProperty("--last-click-x", xPercent);
+  document.body.style.setProperty("--last-click-y", yPercent);
+  document.body.classList.remove("page-clicked");
+  void document.body.offsetWidth;
+  document.body.classList.add("page-clicked");
+  setTimeout(() => document.body.classList.remove("page-clicked"), 560);
+
   const burst = document.createElement("span");
   burst.className = "click-burst";
   burst.style.setProperty("--click-x", x);

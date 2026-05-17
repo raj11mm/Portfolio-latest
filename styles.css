@@ -199,6 +199,18 @@ body::selection {
   color: hsl(var(--foreground));
 }
 
+body.page-clicked::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 118;
+  background:
+    radial-gradient(circle at var(--last-click-x, 50%) var(--last-click-y, 50%), hsl(var(--primary) / 0.2), transparent 20rem),
+    hsl(var(--primary) / 0.035);
+  pointer-events: none;
+  animation: page-click-flash 520ms ease-out forwards;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -1643,6 +1655,15 @@ footer p {
   }
 }
 
+@keyframes page-click-flash {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes click-particle {
   0% {
     opacity: 0;
@@ -1858,11 +1879,23 @@ footer p {
     transition-duration: 0.001ms !important;
   }
 
-  .click-burst,
-  .click-particle,
-  .click-command,
-  .screen-flash,
   .ambient-code-rain {
     display: none;
+  }
+
+  .click-burst {
+    animation: click-burst 650ms ease-out forwards !important;
+  }
+
+  .click-particle {
+    animation: click-particle 800ms ease-out forwards !important;
+  }
+
+  .click-command {
+    animation: click-command 800ms ease-out forwards !important;
+  }
+
+  .screen-flash {
+    animation: screen-flash 520ms ease-out forwards !important;
   }
 }
