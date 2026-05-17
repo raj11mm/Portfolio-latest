@@ -275,37 +275,36 @@ a {
   background: hsl(var(--violet) / 0.1);
 }
 
-.hero-name-graphic {
-  position: absolute;
-  inset: auto 0 1rem auto;
-  z-index: 0;
+.name-side-graphic {
   display: grid;
-  justify-items: end;
+  display: grid;
+  justify-items: start;
+  align-self: center;
   pointer-events: none;
   user-select: none;
-  opacity: 0.18;
-  transform: rotate(-4deg);
+  opacity: 0.55;
+  transform: rotate(-3deg);
 }
 
-.hero-name-graphic span,
-.hero-name-graphic strong {
+.name-side-graphic span,
+.name-side-graphic strong {
   font-family: "Fira Code", monospace;
   font-weight: 900;
   letter-spacing: -0.12em;
-  line-height: 0.78;
+  line-height: 0.72;
   background: linear-gradient(135deg, hsl(var(--primary) / 0.95), hsl(var(--violet) / 0.55));
   background-clip: text;
   color: transparent;
   text-shadow: 0 0 60px hsl(var(--primary) / 0.18);
 }
 
-.hero-name-graphic span {
-  font-size: clamp(8rem, 20vw, 18rem);
+.name-side-graphic span {
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
 }
 
-.hero-name-graphic strong {
-  margin-top: -0.5rem;
-  font-size: clamp(6rem, 15vw, 14rem);
+.name-side-graphic strong {
+  margin-top: -0.1rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
 }
 
 .scroll-cue {
@@ -1522,17 +1521,16 @@ footer p {
     display: none;
   }
 
-  .hero-name-graphic {
-    inset: auto 0 3rem auto;
-    opacity: 0.1;
+  .name-side-graphic {
+    opacity: 0.5;
   }
 
-  .hero-name-graphic span {
-    font-size: clamp(5.5rem, 25vw, 9rem);
+  .name-side-graphic span {
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 
-  .hero-name-graphic strong {
-    font-size: clamp(4rem, 19vw, 7rem);
+  .name-side-graphic strong {
+    font-size: clamp(1.55rem, 8vw, 2.35rem);
   }
 
   .stack-lab {
